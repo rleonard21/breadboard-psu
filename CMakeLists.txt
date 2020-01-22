@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.12)
 project(breadboard_psu)
 
 set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_COMPILER "/usr/bin/avr-gcc")
+set(CMAKE_CXX_COMPILER "/usr/bin/avr-g++")
 
 # Define some constants
 set(AVR_MCU "attiny84")
@@ -27,4 +29,7 @@ message("")
 
 include_directories(.)
 
-add_executable(main main.c)
+add_executable(main main.c
+                Debounce.c Debounce.h
+                Interrupt.c Interrupt.h
+        )

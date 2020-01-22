@@ -1,10 +1,10 @@
 CC=/usr/local/bin/avr-gcc
 DEVICE=attiny84
 CFLAGS=-g -Os -Wall -mcall-prologues -mmcu=$(DEVICE)
-OBJ2HEX=/usr/local/bin/avr-objcopy 
-PROG=/usr/local/bin/avrdude
+OBJ2HEX=/usr/bin/avr-objcopy 
+PROG=/usr/bin/avrdude
 TARGET=binary
-FILES=main.c
+FILES=main.c Interrupt.c Debounce.c
 CLK=1000000
 
 .DEFAULT_GOAL = build
