@@ -6,7 +6,7 @@
 
 #include "Debounce.h"
 
-// Bits is set to one if a depounced press is detected.
+// Bits is set to one if a debounced press is detected.
 volatile uint8_t buttons_down;
 
 // Return non-zero if a button matching mask is pressed.

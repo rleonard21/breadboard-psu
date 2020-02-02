@@ -9,12 +9,13 @@
 
 // EFFECTS: inits the system tick
 void Interrupt_init() {
-	TIMSK0 |= _BV(TOIE0); // Enable timer0 overflow interrupt vector
-	TCCR0A |= _BV(WGM01) | _BV(WGM00); // fast PWM
-	TCCR0B |= _BV(CS10);
+	TIMSK1 |= _BV(TOIE1); // Enable timer0 overflow interrupt vector
+	TCCR1A |= _BV(WGM11) | _BV(WGM10); // fast PWM
+	TCCR1B |= _BV(CS10);
+	sei();
 }
 
 // EFFECTS: executes on overflow of timer0 (3.9kHz)
-ISR(TIM0_OVF_vect) {
+ISR(TIM1_OVF_vect) {
 	debounce();
 }

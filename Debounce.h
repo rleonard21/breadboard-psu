@@ -15,9 +15,9 @@
 #define BUTTON_PORT  PORTA
 #define BUTTON_PIN   PINA
 #define BUTTON_DDR   DDRA
-#define BUTTON1_MASK (1<<PA3)
-#define BUTTON2_MASK (1<<PA2)
-#define BUTTON_MASK  (BUTTON1_MASK | BUTTON2_MASK)
+#define CH1_ENABLE (1<<PA3)
+#define CH2_ENABLE (1<<PA2)
+#define BUTTON_MASK  (CH1_ENABLE | CH2_ENABLE)
 
 // Variable to tell that the button is pressed (and debounced).
 // Can be read with button_down() which will clear it.
